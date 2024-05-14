@@ -9,7 +9,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use("/auth", authRoute);
-app.use("/ready", (req, res) => {
+app.get("/ready", (req, res) => {
   res.status(200).json({ message: "OK "})
 })
 
