@@ -2,6 +2,7 @@ const { createProduct } = require("../controllers/products/createProduct.control
 const { editProduct } = require("../controllers/products/editProduct.controller");
 const { getAllProducts } = require("../controllers/products/getAllProducts.controller");
 const { getProductByCategoryName } = require("../controllers/products/getProductByCategoryName.controller");
+const { getProductById } = require("../controllers/products/getProductById.controller");
 const { getTrendingProducts } = require("../controllers/products/getTrendingProducts.controllers");
 
 const router = require("express").Router();
@@ -17,6 +18,9 @@ router.get("/list", getAllProducts);
 
 // edit product
 router.put("/:id/edit", editProduct);
+
+// get product by id
+router.get("/:id/product", getProductById);
 
 // get trending products
 router.get("/trending", getTrendingProducts);
