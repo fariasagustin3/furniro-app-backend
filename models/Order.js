@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
 
 const OrderSchema = new mongoose.Schema({
+  products: {
+    type: Array,
+  },
+  total: {
+    type: Number,
+  },
   firstName: {
     type: String,
   },
