@@ -4,6 +4,7 @@ const { connectDB } = require("./database/dbConnection");
 const authRoute = require("./routes/auth")
 const categoriesRoute = require("./routes/categories");
 const productsRoute = require("./routes/products");
+const ordersRoute = require("./routes/orders");
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.use(express.json())
 app.use("/auth", authRoute);
 app.use("/categories", categoriesRoute);
 app.use("/products", productsRoute);
-
+app.use("/orders", ordersRoute);
 
 app.get("/ready", (req, res) => {
   res.status(200).json({ message: "OK "})
