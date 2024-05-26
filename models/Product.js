@@ -38,7 +38,7 @@ const ProductSchema = new mongoose.Schema({
     type: String,
   },
   additionalInformation: {
-    type: Map
+    type: Array
   }
 }, {
   timestamps: true
