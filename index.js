@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const { config } = require("dotenv")
 const { connectDB } = require("./database/dbConnection");
 const authRoute = require("./routes/auth")
 const categoriesRoute = require("./routes/categories");
@@ -7,6 +8,7 @@ const productsRoute = require("./routes/products");
 const ordersRoute = require("./routes/orders");
 
 const app = express();
+config();
 
 app.use(cors())
 app.use(express.json())
@@ -21,7 +23,7 @@ app.get("/ready", (req, res) => {
 })
 
 
-app.listen(3001, () => {
-  console.log("Server running on port 3001");
+app.listen(process.env.PORT, () => {
+  console.log("Server running!");
   connectDB()
 })
