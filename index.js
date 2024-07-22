@@ -18,7 +18,7 @@ app.use("/categories", categoriesRoute);
 app.use("/products", productsRoute);
 app.use("/orders", ordersRoute);
 
-app.get("/ready", (req, res) => {
+app.get("/", (req, res) => {
   res.status(200).json({ message: "OK "})
 })
 
